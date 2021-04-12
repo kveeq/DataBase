@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <UserSecretsId>9287eba4-15eb-4530-b1a0-4c1c4964b80f</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="arrows_expand_icon_152696.png" />
+    <None Remove="collapsearrow_colapso_4722.png" />
+    <None Remove="crosscircleregular_106260.png" />
+    <None Remove="logo.png" />
+    <None Remove="minimize-window-xxl_79582.png" />
+    <None Remove="search_magnifyng_glass_find_locate_icon_123485.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="arrows_expand_icon_152696.png" />
+    <Resource Include="AssemblyInfo.cs" />
+    <Resource Include="collapsearrow_colapso_4722.png" />
+    <Resource Include="crosscircleregular_106260.png" />
+    <Resource Include="logo.png" />
+    <Resource Include="minimize-window-xxl_79582.png" />
+    <Resource Include="search_magnifyng_glass_find_locate_icon_123485.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

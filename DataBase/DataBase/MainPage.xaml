@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.MainPage">
+    <ScrollView>
+    <Grid Background="#FFD0CBCB" Margin="2,2,2,0" MinimumWidthRequest="812" MinimumHeightRequest="456">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ImageButton Source="logo.png"
+                    HorizontalOptions="Start"
+                    VerticalOptions="StartAndExpand" 
+                     x:Name="Ktits" 
+                     Margin="25,17,0,0"
+                     Aspect="AspectFill" 
+                     HeightRequest="43" 
+                     WidthRequest="43" 
+                     Style="{DynamicResource ButtonStyle1}"
+                     Grid.Column="0" Grid.Row="0"/>
+        <Grid x:Name="GridFind" HorizontalOptions="Center" HeightRequest="60" Margin="0,12,0,0" VerticalOptions="Start" WidthRequest="466" Grid.Column="1" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="207*"/>
+                <ColumnDefinition Width="26*"/>
+            </Grid.ColumnDefinitions>
+            <Entry x:Name="txt_find" Style="{DynamicResource TextBoxStyle1}" HorizontalOptions="Start" Margin="7,0,0,0" Text="ФИО" VerticalOptions="Center" WidthRequest="410" HeightRequest="42" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="20" FontFamily="Comic Sans MS" Grid.ColumnSpan="1"/>
+            <ImageButton x:Name="btn_find" Source="search_magnifyng_glass_find_locate_icon_123485.png" IsEnabled="True" Style="{DynamicResource ButtonStyle1}" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="42" WidthRequest="42" BorderColor="Transparent" Clicked="Button_Click" Grid.Column="1">
+
+            </ImageButton>
+        </Grid>
+        <Grid x:Name="GridMenu" Margin="5,0,5,0" HorizontalOptions="End" VerticalOptions="Start" FlowDirection="LeftToRight" Grid.Column="2" Grid.Row="0"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="27*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+            <ImageButton Source="crosscircleregular_106260.png" HorizontalOptions="Start" Margin="102,10,0,0" VerticalOptions="Start" HeightRequest="30" WidthRequest="30" Clicked="Button_Click_2" Grid.ColumnSpan="2" Style="{DynamicResource Output}">
+
+            </ImageButton>
+            <ImageButton x:Name="btn" Source="arrows_expand_icon_152696.png" HorizontalOptions="Start" Margin="68,10,0,0" WidthRequest="30" Clicked="Button_Click_3" HeightRequest="29" VerticalOptions="Start" Style="{DynamicResource Output}">
+
+            </ImageButton>
+            <ImageButton Style="{DynamicResource Output}" Source="minimize-window-xxl_79582.png" HorizontalOptions="Center" Margin="0,10,0,0" WidthRequest="30" HeightRequest="29" VerticalOptions="Start" Clicked="Button_Click_4">
+            </ImageButton>
+        </Grid>
+        
+        <!-- Изображение --> 
+        <Image x:Name="PicBox" Grid.Column="0" Grid.Row="1" BackgroundColor="Black" HorizontalOptions="Start" HeightRequest="368" Margin="20, 0, 0, 0" VerticalOptions="Center" WidthRequest="245" Aspect = "AspectFill" />
+        
+        <Grid x:Name="GridPanel" Margin="17,0,17,50" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Background="white" HorizontalOptions="End" VerticalOptions="Center" MinimumWidthRequest="572">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/> <!-- если поставить значение то перестает растягиваться Grid Panel-->
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <BoxView x:Name="brd" Color="red" MinimumWidthRequest="100" HeightRequest="1" Margin="-1,77,3,298"/>
+            <Label Text="Год выпуска" HorizontalOptions="Start" Margin="14,101,0,0" VerticalOptions="Start" HeightRequest="32" WidthRequest="95" Background="Red" FontFamily="Comic Sans MS" FontSize="14" Grid.Column="0"/>
+            <Label Text="Достижения" HorizontalOptions="Start" Margin="14,144,0,0" VerticalOptions="Start" HeightRequest="32" WidthRequest="93" Background="#FFFF0404" FontFamily="Comic Sans MS" FontSize="14" Grid.Column="0"/>
+            <Label x:Name="lbl_activitiess" Grid.Column="1" Grid.ColumnSpan="2" Text="Достижения" HorizontalOptions="Start" Margin="0, 146,15,0" VerticalOptions="Start" HeightRequest="219" WidthRequest="431" Background="#FFEBDFDF" FontSize="24" FontFamily="Comic Sans MS"/>
+            <Label x:Name="txt_birthday" Grid.Column="1" Grid.ColumnSpan="2" Text="Год выпуска" HorizontalOptions="Start" Margin="0,101,15,0" VerticalOptions="Start" HeightRequest="36" WidthRequest="430" Background="#FFE5DBDB" FontFamily="Comic Sans MS" FontSize="22"/>
+            <Label x:Name="JoinedName" Grid.Column="0" Grid.ColumnSpan="2"  Text="ФИО" HorizontalOptions="Start" Margin="15,15,0,0" VerticalOptions="Start" HeightRequest="49" WidthRequest="351" Background="#FFF0E0E0" FontFamily="Comic Sans MS" FontSize="20"/>
+        </Grid>
+
+        <Button x:Name="Next" Text="Следующий" Grid.Column="0" Grid.Row="2" HeightRequest="50" Margin="10, 0, 0, 10" WidthRequest="106" Clicked="Next_Click" TextColor="Black" FontFamily="Comic Sans MS" FontSize="16">
+
+        </Button>
+        <Button x:Name="Back" Text="Предыдущий" Grid.Column="2" Grid.Row="2" HeightRequest="50" Margin="0, 0, 10, 10" WidthRequest="116" Clicked="Back_Click" TextColor="Black" FontSize="16" FontFamily="Comic Sans MS"/>
+
+    </Grid>
+    </ScrollView>
+</ContentPage>
